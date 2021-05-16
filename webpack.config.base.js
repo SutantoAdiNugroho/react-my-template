@@ -20,14 +20,16 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        test: /\.(ico|png|jpg|jpeg|png|gif|mp3|svg)$/,
+        exclude: /node_modules/,
         use: ["file-loader"],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+      template: path.join(__dirname, "public", "index.html"),
+      favicon: path.join(__dirname, "public", "favicon.ico")
     }),
   ],
 };
